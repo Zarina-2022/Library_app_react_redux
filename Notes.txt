@@ -16,4 +16,4 @@ B. Is sirasi:
     3. Redux altyapisinin kurulmasi:
         - !!!  Storda bulunacak statlere karar vermek !!! (booksState, categoriesState)
           (daha sonradan da ekleme yapilabilir: redux esnektir)
-        - 
+    4. Router yapisinin kurulmasi (page routes=>react-router-dom)
