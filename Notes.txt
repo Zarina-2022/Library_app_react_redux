@@ -12,5 +12,8 @@ B. Is sirasi:
         - react-router-dom
         - UI kutuphanesi olarak bootstrap kullanilacak
 
-    2. Veri yapisinin ve json-server yapisinin kurulmasi:
-    
+    2. Veri yapisinin ve json-server yapisinin kurulmasi (db.json)
+    3. Redux altyapisinin kurulmasi:
+        - !!!  Storda bulunacak statlere karar vermek !!! (booksState, categoriesState)
+          (daha sonradan da ekleme yapilabilir: redux esnektir)
+        - 
