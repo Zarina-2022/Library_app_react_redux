@@ -1,3 +1,4 @@
+
 @media screen and (min-width:777px){
     .nav-link {
       padding:18px 0;
@@ -7,9 +8,12 @@
       padding: 0;
     }
   }
+
   #orderLink{
     padding: 5px;
-    margin-top: 12px;
+    margin-top: 10px;
     align-items: center;
     text-align: center;
+    background: #b32d1b;
+    color: rgb(236, 231, 231);
   }

@@ -4,7 +4,7 @@ import actionTypes from "../actions/actionTypes";
 
 // yani kitaplar cekilirken:
 const initialState = {
-  pending: false, // askida (beklemek) - uzerinde herhangi islem var mi yok mu?
+  pending: true, // askida (beklemek) - uzerinde herhangi islem var mi yok mu?
   success: false, // bu islem basariyla gerceklesmis mi, gerceklesmemis mi?
   books: [], // o anki butun guncel kitap bilgileri
   error: false, // herhangi bir hata varmi, yok mu?

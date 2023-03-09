@@ -5,32 +5,33 @@ import logo from "../assets/images/logo33.png";
 
 const Header = () => {
   return (
+    
     <div>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-        <div className="container ">
-          <Link className="navbar-brand d-xs-block py-3" to="#">
+      <nav className="navbar navbar-expand-md mb-5 py-2 navbar-dark bg-dark">
+        <div className="container">
+          <div className="navbar-brand py-2 ">
             <img src={logo} height="40" alt="Company Logo" />
-          </Link>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto">
                 
               <li className="nav-item">
                 <Link
                   className="nav-link mx-2 active"
                   aria-current="page"
-                  to="#">
+                  to={"/"}>
                   Home
                 </Link>
               </li>
@@ -51,7 +52,7 @@ const Header = () => {
               </li>
                
               <li className="nav-item">
-                <Link className="nav-link btn bg-success mx-2" id="orderLink" to="#">
+                <Link className="nav-link btn mx-2" id="orderLink" to="#">
                   Order Online
                 </Link>
               </li>

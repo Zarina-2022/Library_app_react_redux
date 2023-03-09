@@ -3,26 +3,26 @@ import actionTypes from "../actions/actionTypes";
 const initialState = {
   pending: true,
   success: false,
-  categories: [],
+  authors: [],
   error: false,
   errorMessage: "",
 };
 
-const categoriesReducer = (state = initialState, action) => {
+const authorsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.categoryActions.FETCH_CATEGORIES_START:
+    case actionTypes.authorActions.FETCH_AUTHORS_START:
       return {
         ...state,
         pending: true,
       };
-    case actionTypes.categoryActions.FETCH_CATEGORIES_SUCCESS:
+    case actionTypes.authorActions.FETCH_AUTHORS_SUCCESS:
       return {
         ...state,
         pending: false,
         success: true,
-        categories: action.payload,
+        authors: action.payload,
       };
-    case actionTypes.categoryActions.FETCH_CATEGORIES_FAILURE:
+    case actionTypes.authorActions.FETCH_AUTHORS_FAILURE:
       return {
         ...state,
         pending: false,
@@ -36,4 +36,4 @@ const categoriesReducer = (state = initialState, action) => {
   }
 };
 
-export default categoriesReducer;
+export default authorsReducer;

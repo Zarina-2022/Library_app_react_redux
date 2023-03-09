@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
+import ListBooks from "../components/ListBooks";
 
 const Home = ()=>{
     return(
         <div>
-            <Header whichPage = {"/"} navigateTo="/"/>
-            <h1>Home page</h1>
+            <Header />
+            <ListBooks />
         </div>
     )
 }
