@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "../assets/styles/listBooks.css";
 import { Link } from "react-router-dom";
+import { upperFirstLetter } from "../utils/functions";
 
 const ListBooks = () => {
   const { booksState, categoriesState, authorsState } = useSelector(
@@ -55,9 +56,9 @@ const ListBooks = () => {
                                     return (
                                       <tr key={book.id}>
                                         <td>{index + 1}</td>
-                                        <td>{book.title}</td>
-                                        <td>{myCategory.name}</td>
-                                        <td>{myAuthor.name}</td>
+                                        <td>{upperFirstLetter(book.title)}</td>
+                                        <td>{upperFirstLetter(myCategory.name)}</td>
+                                        <td>{upperFirstLetter(myAuthor.name)}</td>
                                         <td>
                                           <div className="d-flex justify-content-end">
                                             <button

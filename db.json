@@ -2,7 +2,7 @@
     "books":[
         {
             "id":"1",
-            "title":"War And Peace",
+            "title":"war and peace",
             "authorId":"1",
             "publisher":"Vintage",
             "price":"15.69",
@@ -11,7 +11,7 @@
         },
         {
             "id":"2",
-            "title":"The Fossil",
+            "title":"the fossil",
             "authorId":"2",
             "publisher":"Kindle Unlimited",
             "price":"15.99",
@@ -49,11 +49,11 @@
         },
         {
             "id":"2",
-            "name":"Joshua T.Calvert"
+            "name":"joshua T. Calvert"
         },
         {
             "id":"3",
-            "name":"Nicole Trope"
+            "name":"nicole trope"
         }
     ]
 }
