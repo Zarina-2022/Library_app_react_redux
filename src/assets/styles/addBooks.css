@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+
+body {
+    background: #f5f5f5;
+}
+
+.login-box {
+    background: url(https://i.imgur.com/73BxBuI.png);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin: 0px auto;
+    max-height: 600px;
+    -webkit-box-shadow: 0 2px 60px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 60px -5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-family: "Script MT";
+    font-size: 34px;
+    text-align: center;
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+.logo .logo-font {
+    color: #3BC3FF;
+}
+.form-select{
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 767px) {
+    .logo {
+        font-size: 30px;
+    }
+    .login-form {
+        max-width: 90%;
+    }
+}
+@media only screen and (min-width: 767px) {
+    .logo {
+        font-size: 30px;
+    }
+    .login-form {
+        max-width: 90%;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .logo {
+        font-size: 30px;
+    }
+    .login-form {
+        max-width: 55%;
+    }
+}

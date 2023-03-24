@@ -1,7 +1,6 @@
 const urls = {
     books: "/books",
-    categories: "/categories",
-    authors: "/authors"
+    categories: "/categories"
 }
 
 export default urls

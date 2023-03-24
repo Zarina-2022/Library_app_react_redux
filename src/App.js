@@ -6,18 +6,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import api from "./api/api"; // axiosun base url'i => http://localhost:3004
 import urls from "./api/urls"; // axiosun eindpointi => /books
 
-import Home from "./pages/Home";
+import Books from "./pages/Books";
+import AddBook from "./pages/AddBook";
 import NotFoundPage from "./pages/NotFoundPage";
+import BookDetails from "./pages/BookDetails";
+import EditBook from "./pages/EditBook";
+import Categories from "./pages/Categories";
+import EditCategory from "./pages/EditCategory";
+import CategoryDetails from "./pages/CategoryDetails";
 
 import Loading from "./components/Loading";
 import Error from "./components/Error"
 
 import actionTypes from "./redux/actions/actionTypes";
 
-
-
 function App() {
-  const {booksState,categoriesState,authorsState} = useSelector((state) => state);
+  const {booksState,categoriesState} = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -59,58 +63,27 @@ function App() {
           payload: "An error occurred while pulling the categories",
         });
       });
-
-    // get authors
-    dispatch({ type: actionTypes.authorActions.FETCH_AUTHORS_START });
-    api
-      .get(urls.authors)
-      .then((res) => {
-        setTimeout(() => {
-          dispatch({
-            type: actionTypes.authorActions.FETCH_AUTHORS_SUCCESS,
-            payload: res.data,
-          });
-        }, 1000);
-      })
-      .catch((err) => {
-        dispatch({
-          type: actionTypes.authorActions.FETCH_AUTHORS_FAILURE,
-          payload: "An error occurred while pulling authors",
-        });
-      });
   }, []);
 
   // success
-  if (booksState.pending === true) {
+  if (!booksState.success || !categoriesState.success) {
     return <Loading />;
   }
-  /*
-  if (categoriesState.pending === true) {
-    return <Loading />;
-  }
-  if (authorsState.pending === true) {
-    return <Loading />;
-  }
-  */
   //  error
-  if (booksState.error === true) {
+  if (booksState.error || categoriesState.error) {
     return <Error />;
   }
-  /*
-  if (categoriesState.error === true) {
-    return ;
-  }
-  if (authorsState.error === true) {
-    return ;
-  }
-*/
-
-
+  
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-
+        <Route path="/" element={<Books />} />
+        <Route path="/add-book" element={<AddBook />} />
+        <Route path="/book-details/:bookId" element={<BookDetails />} />
+        <Route path="/edit-book/:bookId" element={<EditBook />} />
+        <Route path="/categories-page" element={<Categories />} />
+        <Route path="/edit-category/:categoryIdId" element={<EditCategory />} />
+        <Route path="/category-details/:categoryId" element={<CategoryDetails />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

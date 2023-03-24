@@ -18,3 +18,30 @@ B. Is sirasi:
           (daha sonradan da ekleme yapilabilir: redux esnektir)
     4. Router yapisinin kurulmasi (page routes=>react-router-dom)
     5. Uygulama acilirken redux icerisindeki statleri doldurmak.
+    6. Add book senaryosu:
+        - Bu sayfanin amaci kullanicidan kitap bilgilerini alip servera
+          gonderip kaydettirmektir. Bunun icin kitap bilgilerini alacak bir 
+          forma ihtiyacimiz vardir. Alinan bilgiler servera basariyla 
+          kaydedildikten sonra  AYNI EKLEME ISLEMI STORA DA YAPILMALIDIR.
+        
+
+
+
+NOTLAR:
+
+NOTLAR:
+ -local state = component'ın sadece kendisi için geçerli olan durumların
+ saklandığı state (useState)
+ -global state = uygulama içerisindeki diğer componentların ortak olarak
+ kullanmak isteyecekleri stateler (store)
+
+ -override : ezmek, üzerine yazmak/ öncekini geçersiz kıl; benim yazdığımı
+ geçerli kıl
+
+
+    Arastirilmasi gereken konular !!!
+ -Next Topics:
+    ->middleware, redux-thunk,logger
+    ->authantication, authorization
+    ->login/register sistemi nasıl işler, frontend tarafında nasıl yönetilir
+    ->token ne demektir (jwt)

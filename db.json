@@ -1,59 +1,52 @@
 {
-    "books":[
-        {
-            "id":"1",
-            "title":"war and peace",
-            "authorId":"1",
-            "publisher":"Vintage",
-            "price":"15.69",
-            "isbn":"1400079985",
-            "categoryId":"1"
-        },
-        {
-            "id":"2",
-            "title":"the fossil",
-            "authorId":"2",
-            "publisher":"Kindle Unlimited",
-            "price":"15.99",
-            "isbn":"76-7867654654",
-            "categoryId":"2"
-        },
-        {
-            "id":"3",
-            "title":"The Family Across The Street",
-            "authorId":"3",
-            "publisher":"Bookouture",
-            "price":"9.89",
-            "isbn":"18000198272",
-            "categoryId":"3"
-        }
-    ],
-    "categories":[
-        {
-            "id":"1",
-            "name":"Novel"
-        },
-        {
-            "id":"2",
-            "name":"Science Fiction"
-        },
-        {
-            "id":"3",
-            "name":"Mystery"
-        }
-    ],
-    "authors":[
-        {
-            "id":"1",
-            "name":"Leo Tolstoy"
-        },
-        {
-            "id":"2",
-            "name":"joshua T. Calvert"
-        },
-        {
-            "id":"3",
-            "name":"nicole trope"
-        }
-    ]
+  "books": [
+    {
+      "id": "1",
+      "title": "war and peace",
+      "author": "Leo Tolstoy",
+      "publisher": "Vintage",
+      "img": "https://amatteroffancy.files.wordpress.com/2018/02/18626867.jpg",
+      "price": "15.69",
+      "isbn": "1400079985",
+      "categoryId": "1"
+    },
+    {
+      "id": "2",
+      "title": "the fossil",
+      "author": "joshua T. Calvert",
+      "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1614780909i/57233761.jpg",
+      "publisher": "Kindle Unlimited",
+      "price": "15.99",
+      "isbn": "7867654654",
+      "categoryId": "2"
+    },
+    {
+      "id": "1679262278085",
+      "title": "deneme1",
+      "author": "deneme1",
+      "publisher": "deneme1",
+      "price": "54",
+      "isbn": "98765t543",
+      "categoryId": "2"
+    },
+    {
+      "id": "1679347844461",
+      "title": "3456",
+      "author": "Arthur",
+      "publisher": "erty",
+      "price": "67",
+      "isbn": "23456543",
+      "categoryId": "1"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Novel"
+    },
+    {
+      "id": "2",
+      "name": "Science Fiction"
+    }
+  ]
 }

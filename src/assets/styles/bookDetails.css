@@ -1,0 +1,29 @@
+body{
+    background: rgb(202, 235, 232);
+}
+.bookDetails{
+    color:  rgb(78, 101, 230);
+}
+.titlestl{  
+    font-weight: bold;
+    margin-left: 20px;
+    color: rgb(73, 67, 67);
+}
+.titleClr{
+    color: rgb(78, 101, 230);
+    font-weight: bold;
+    margin-left: 10px;
+}
+.btnBg{
+    background-color: rgb(78, 101, 230);
+    color: #fff;
+    margin-left: 40%;  
+    transition: all ease 0.5s;
+}
+.btnBg:hover{
+    background-color: #FFC107;
+}
+.bookFoto{
+    max-width: 100%;
+    height: auto;
+}
