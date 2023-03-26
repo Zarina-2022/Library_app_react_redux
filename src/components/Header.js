@@ -11,7 +11,7 @@ import moon from "../assets/images/bg-moon.png";
 
 
 const Header = () => {
-  const { themeState } = useSelector((state) => state);
+  const { themeState,booksState,categoriesState } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   return (
@@ -83,10 +83,17 @@ const Header = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link btn mx-2" id="orderLink" to="#">
-                  Order Online
-                </Link>
+                <p className="nav-link btn mx-2" id="orderLink">
+                Total number of books: {booksState.books.length}
+                </p>
               </li>
+
+              <li className="nav-item">
+                <p className="nav-link btn mx-2" id="orderLink">
+                Total number of categories: {categoriesState.categories.length}
+                </p>
+              </li>
+
             </ul>
           </div>
         </div>

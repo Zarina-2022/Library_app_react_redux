@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import ListBooks from "../components/ListBooks";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import paths from "../router/paths";
 
 const Books = () => {
     const navigate = useNavigate()
@@ -14,7 +15,8 @@ const Books = () => {
         text={"Add a book"} 
         type={"success"} 
         className="w-100 fs-5" 
-        onClick={()=>navigate("/add-book")}
+        //onClick={()=>navigate("/add-book")} asagidaki paths.addBook ile ayni
+        onClick={()=>navigate(paths.addBook)}
         />
       </div>
       <ListBooks />

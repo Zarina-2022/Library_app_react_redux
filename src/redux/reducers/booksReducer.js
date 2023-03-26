@@ -58,7 +58,7 @@ const booksReducer = (state = initialState, action) => {
       
       case actionTypes.bookActions.DELETE_BOOKS:
         // once yeni sepete id'si silinmeyen kitaplari koyuyoruz (filter ile):
-        let filteredBooks = state.books.filter(item => item.id !== action.payload)
+        var filteredBooks = state.books.filter(item => item.id !== action.payload)
         // sonra bu sepeti ekranda listeliyoruz:
         return{
          ...state,
@@ -104,7 +104,15 @@ const booksReducer = (state = initialState, action) => {
          books: tempArray
         }
          */
-    default:
+        case actionTypes.bookActions.DELETE_BOOKS_AFTER_DELETE_CATEGORY:
+          // payload olarak kategory id'si gelecek
+          var filteredBooks = state.books.filter(state=>state.categoryId !== action.payload)
+          return{
+            ...state,
+            books: filteredBooks
+          }
+    
+      default:
       return state;
   }
 };

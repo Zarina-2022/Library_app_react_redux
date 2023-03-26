@@ -31,6 +31,31 @@ const categoriesReducer = (state = initialState, action) => {
         errorMessage: action.payload,
       };
 
+    case actionTypes.categoryActions.POST_CATEGORIES:
+      return {
+        ...state,
+        categories: [...state.categories, action.payload],
+      };
+     
+    case actionTypes.categoryActions.DELETE_CATEGORIES:
+      let filteredCategories = state.categories.filter(
+        (item) => item.id !== action.payload
+      );
+
+      return {
+        ...state,
+        categories: filteredCategories,
+      };
+
+    case actionTypes.categoryActions.PUT_CATEGORIES:
+      const filteredArr = state.categories.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return {
+        ...state,
+        categories: [...filteredArr, action.payload],
+      };
+
     default:
       return state;
   }

@@ -45,3 +45,7 @@ NOTLAR:
     ->authantication, authorization
     ->login/register sistemi nasıl işler, frontend tarafında nasıl yönetilir
     ->token ne demektir (jwt)
+    -> free react tampletes
+
+
+-> bir react projesini indirdigin zaman mutlaka terminalde npm install yapmalisin.

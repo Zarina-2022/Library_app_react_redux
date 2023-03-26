@@ -65,7 +65,7 @@ const AddBook = () => {
       setCategoryAlert(true);
       setTimeout(() => {
         setCategoryAlert(false);
-      }, 3000);
+      }, 2000);
       return;
     }
     api
@@ -79,7 +79,7 @@ const AddBook = () => {
         setTimeout(() => {
           setOpenSuccessModal(false)
           navigate ("/")
-        }, 3000);
+        }, 2000);
       })
       .catch((err) => {
         alert("Error occur")

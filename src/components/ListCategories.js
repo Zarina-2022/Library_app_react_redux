@@ -31,12 +31,17 @@ const ListCategories = () => {
           type: actionTypes.categoryActions.DELETE_CATEGORIES,
           payload: id,
         });
+        dispatch({
+          type: actionTypes.bookActions.DELETE_BOOKS_AFTER_DELETE_CATEGORY,
+          payload: id,
+        });
         setOpenDeleteModal(false);
         setSuccessAlert(true);
         setTimeout(() => {
           setSuccessAlert(false);
         }, 3000);
         return;
+     
       })
       .catch((err) => {});
   };
@@ -82,66 +87,90 @@ const ListCategories = () => {
                               >
                                 <thead>
                                   <tr className="text-center">
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       #
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Category
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Number of books
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Actions
                                     </th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   {categoriesState.categories.map(
-                                    (category, index) => (
-                                      <tr key={category.id}>
+                                    (category, index) => {
+                                      const myBooks = booksState.books.filter(
+                                        (item) =>
+                                          item.categoryId === category.id
+                                      );
+                                      /*
+                                    filter() islemi for() dongusu ile de yazilabilir:
+                                    const myBooks=[]
+                                    for(let i=0;i<booksState.books.length;i++){
+                                        if(booksState.books[i].categoryId === category.id){
+                                            myBooks.push(booksState.books[i])
+                                        }
+                                    }
+                                     */
 
-                                        <td>{index + 1}</td>
+                                      return (
+                                        <tr key={category.id}>
+                                          <td>{index + 1}</td>
+                                          <td>
+                                            {upperFirstLetter2(category.name)}
+                                          </td>
+                                          <td>{myBooks.length}</td>
+                                          <td>
+                                            <div className="d-flex justify-content-center">
+                                              <button
+                                                onClick={() => {
+                                                  setOpenDeleteModal(true);
+                                                  setDeletedCategoryId(
+                                                    // bu state ile program artik biliyor hangi category id'si tiklandi (state'in icine tiklanan category'nin id'si konuldu)
+                                                    category.id
+                                                  );
+                                                }}
+                                                type="button"
+                                                className="btn btn-sm btn-danger me-3"
+                                              >
+                                                Delete
+                                              </button>
 
-                                        <td>
-                                          {upperFirstLetter2(category.name)}
-                                        </td>
+                                              <Link
+                                                to={`/edit-category/${category.id}`}
+                                                className="btn btn-sm btn-warning me-3"
+                                              >
+                                                Edit
+                                              </Link>
 
-                                        <td>Number</td>
-
-
-                                        <td>
-                                          <div className="d-flex justify-content-center">
-                                            <button
-                                              onClick={() => {
-                                                setOpenDeleteModal(true);
-                                                setDeletedCategoryId(
-                                                  category.id
-                                                );
-                                              }}
-                                              type="button"
-                                              className="btn btn-sm btn-danger me-3"
-                                            >
-                                              Delete
-                                            </button>
-
-                                            <Link
-                                              to={`/edit-category/${category.id}`}
-                                              className="btn btn-sm btn-warning me-3"
-                                            >
-                                              Edit
-                                            </Link>
-
-                                            <Link
-                                              to={`/category-details/${category.id}`}
-                                              className="btn btn-sm btn-primary me-3"
-                                            >
-                                              Details
-                                            </Link>
-                                          </div>
-                                        </td>
-                                      </tr>
-                                    )
+                                              <Link
+                                                to={`/category-details/${category.id}`}
+                                                className="btn btn-sm btn-primary me-3"
+                                              >
+                                                Details
+                                              </Link>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      );
+                                    }
                                   )}
                                 </tbody>
                               </table>
@@ -170,3 +199,17 @@ const ListCategories = () => {
 };
 
 export default ListCategories;
+
+/*
+errorFunction:
+book.map = ()=> {
+    return(
+        <tr key={category.id}>
+    )
+}
+
+direkt return yapar ()
+book.map(category, index) => (
+    <tr key={category.id}>
+)
+*/

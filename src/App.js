@@ -5,23 +5,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import axios from "axios";
 import api from "./api/api"; // axiosun base url'i => http://localhost:3004
 import urls from "./api/urls"; // axiosun eindpointi => /books
+//import routes from "./router/router"; // <Route>' nin icerigi
 
 import Books from "./pages/Books";
 import AddBook from "./pages/AddBook";
-import NotFoundPage from "./pages/NotFoundPage";
 import BookDetails from "./pages/BookDetails";
 import EditBook from "./pages/EditBook";
 import Categories from "./pages/Categories";
 import EditCategory from "./pages/EditCategory";
 import CategoryDetails from "./pages/CategoryDetails";
+import AddCategory from "./pages/AddCategory";
+import NotFoundPage from "./pages/NotFoundPage";
 
 import Loading from "./components/Loading";
-import Error from "./components/Error"
+import Error from "./components/Error";
 
 import actionTypes from "./redux/actions/actionTypes";
 
 function App() {
-  const {booksState,categoriesState} = useSelector((state) => state);
+  const { booksState, categoriesState } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -73,16 +75,24 @@ function App() {
   if (booksState.error || categoriesState.error) {
     return <Error />;
   }
-  
+
   return (
     <BrowserRouter>
       <Routes>
+        {/*
+        {
+          routes.map(route=>(
+            <Route path={route.name} element={route.element()} />
+          ))
+        }
+        */}
         <Route path="/" element={<Books />} />
         <Route path="/add-book" element={<AddBook />} />
         <Route path="/book-details/:bookId" element={<BookDetails />} />
         <Route path="/edit-book/:bookId" element={<EditBook />} />
         <Route path="/categories-page" element={<Categories />} />
-        <Route path="/edit-category/:categoryIdId" element={<EditCategory />} />
+        <Route path="/add-category" element={<AddCategory />} />
+        <Route path="/edit-category/:categoryId" element={<EditCategory />} />
         <Route path="/category-details/:categoryId" element={<CategoryDetails />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

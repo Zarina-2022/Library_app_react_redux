@@ -8,6 +8,7 @@ const actionTypes = {
     POST_BOOKS: "POST_BOOKS", // Yeni kitabi db'se gondermek icin
     DELETE_BOOKS: "DELETE_BOOKS", // Stordan (yani frontend'ten kitap silme)
     PUT_BOOKS: "PUT_BOOKS", // kitap degisikligini bilgirmek icin
+    DELETE_BOOKS_AFTER_DELETE_CATEGORY: "DELETE_BOOKS_AFTER_DELETE_CATEGORY" // category silindiginde, o kategoriye ait tum kitaplar da silinmeli
   },
   categoryActions: {
     FETCH_CATEGORIES_START: "FETCH_CATEGORIES_START",
