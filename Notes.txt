@@ -1,7 +1,7 @@
 Lybrary App:
 
 A. Uygulamanin amaci:
-    Kitaplarin kategorelilerine ayrilarak kayit altina alinmasini saglayacak bir uygulama olacaktir.
+    Kitaplarin kategorilerine ayrilarak kayit altina alinmasini saglayacak bir uygulama olacaktir.
     Uygulamada hem kitaplar icin hem de kategorileri icin CRUD (create, read, update, delete) islemleri yapilabilecektir.
 
 B. Is sirasi:
@@ -10,7 +10,10 @@ B. Is sirasi:
         - axios
         - redux ve react-redux 
         - react-router-dom
-        - UI kutuphanesi olarak bootstrap kullanilacak
+        - UI kutuphanesi olarak:
+            * bootstrap
+            * react-icon library
+            * ant-design
 
     2. Veri yapisinin ve json-server yapisinin kurulmasi (db.json)
     3. Redux altyapisinin kurulmasi:
