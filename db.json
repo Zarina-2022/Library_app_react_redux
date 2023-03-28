@@ -46,15 +46,6 @@
       "price": "8.89",
       "isbn": "359251109673",
       "categoryId": "5"
-    },
-    {
-      "id": "1679783602601",
-      "title": "ert",
-      "author": "asdf",
-      "publisher": "wer",
-      "price": "dfg",
-      "isbn": "asdf",
-      "categoryId": "4"
     }
   ],
   "categories": [

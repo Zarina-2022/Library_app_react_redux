@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 //import axios from "axios";
 import api from "./api/api"; // axiosun base url'i => http://localhost:3004
@@ -15,6 +15,7 @@ import Categories from "./pages/Categories";
 import EditCategory from "./pages/EditCategory";
 import CategoryDetails from "./pages/CategoryDetails";
 import AddCategory from "./pages/AddCategory";
+import Login from "./pages/Login";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import Loading from "./components/Loading";
@@ -23,7 +24,7 @@ import Error from "./components/Error";
 import actionTypes from "./redux/actions/actionTypes";
 
 function App() {
-  const { booksState, categoriesState } = useSelector((state) => state);
+  const { booksState, categoriesState,loginState } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -87,13 +88,14 @@ function App() {
         }
         */}
         <Route path="/" element={<Books />} />
-        <Route path="/add-book" element={<AddBook />} />
+        <Route path="/add-book" element={loginState.success ? <AddBook /> : <Navigate to={"/login"} replace />} />
         <Route path="/book-details/:bookId" element={<BookDetails />} />
-        <Route path="/edit-book/:bookId" element={<EditBook />} />
+        <Route path="/edit-book/:bookId" element={loginState.success ? <EditBook /> : <Navigate to={"/login"} replace />} />
         <Route path="/categories-page" element={<Categories />} />
-        <Route path="/add-category" element={<AddCategory />} />
-        <Route path="/edit-category/:categoryId" element={<EditCategory />} />
-        <Route path="/category-details/:categoryId" element={<CategoryDetails />} />
+        <Route path="/add-category" element={loginState.success ? <AddCategory /> : <Navigate to={"/login"} replace />} />
+        <Route path="/edit-category/:categoryId" element={loginState.success ? <EditCategory /> : <Navigate to={"/login"} replace />} />
+        <Route path="/category-details/:categoryId" element={<CategoryDetails /> } />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

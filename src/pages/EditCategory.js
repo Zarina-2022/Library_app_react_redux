@@ -21,6 +21,7 @@ const EditCategory = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const nameRef = useRef();
+  
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 

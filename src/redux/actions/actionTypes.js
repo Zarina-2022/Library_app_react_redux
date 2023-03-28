@@ -8,7 +8,7 @@ const actionTypes = {
     POST_BOOKS: "POST_BOOKS", // Yeni kitabi db'se gondermek icin
     DELETE_BOOKS: "DELETE_BOOKS", // Stordan (yani frontend'ten kitap silme)
     PUT_BOOKS: "PUT_BOOKS", // kitap degisikligini bilgirmek icin
-    DELETE_BOOKS_AFTER_DELETE_CATEGORY: "DELETE_BOOKS_AFTER_DELETE_CATEGORY" // category silindiginde, o kategoriye ait tum kitaplar da silinmeli
+    DELETE_BOOKS_AFTER_DELETE_CATEGORY: "DELETE_BOOKS_AFTER_DELETE_CATEGORY", // category silindiginde, o kategoriye ait tum kitaplar da silinmeli
   },
   categoryActions: {
     FETCH_CATEGORIES_START: "FETCH_CATEGORIES_START",
@@ -16,11 +16,16 @@ const actionTypes = {
     FETCH_CATEGORIES_FAILURE: "FETCH_CATEGORIES_FAILURE",
     POST_CATEGORIES: "POST_CATEGORIES",
     DELETE_CATEGORIES: "DELETE_CATEGORIES",
-    PUT_CATEGORIES: "PUT_CATEGORIES"
+    PUT_CATEGORIES: "PUT_CATEGORIES",
   },
-  themeActions:{
-    CHANGE_THEME: "CHANGE_THEME"
-  }
+  themeActions: {
+    CHANGE_THEME: "CHANGE_THEME",
+  },
+  loginActions: {
+    LOGIN_SUCCESS: "LOGIN_SUCCESS",
+    LOGIN_FAIL: "LOGIN_FAIL",
+    LOGOUT: "LOGOUT",
+  },
 };
 
 export default actionTypes;

@@ -51,7 +51,7 @@ const Modal = ({
           <div className="modal-body">
             <p>{content}</p>
           </div>
-          <div className="modal-footer">
+          <div className="modal-footer display-flex justify-content-center">
             {cancelBtn && (
               <button
                 onClick={cancelBtnOnlick}

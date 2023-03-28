@@ -20,8 +20,8 @@ const ListBooks = () => {
   const dispatch = useDispatch();
 
   const [successAlert, setSuccessAlert] = useState(false);
-  const [openDeleteModal,setOpenDeleteModal]=useState(false);
-  const [deletedBookId,setDeletedBookId]=useState("")
+  const [openDeleteModal, setOpenDeleteModal] = useState(false);
+  const [deletedBookId, setDeletedBookId] = useState("");
 
   const deleteBook = (id) => {
     // server'den siliyor:
@@ -30,7 +30,7 @@ const ListBooks = () => {
       .then((res) => {
         // store'dan siliyor (type - reducer'deki delete komutu tetikliyor)
         dispatch({ type: actionTypes.bookActions.DELETE_BOOKS, payload: id });
-        setOpenDeleteModal(false)
+        setOpenDeleteModal(false);
         setSuccessAlert(true);
         setTimeout(() => {
           setSuccessAlert(false);
@@ -84,16 +84,28 @@ const ListBooks = () => {
                                     <th className="tableHead" scope="col">
                                       #
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Book
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Category
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Author
                                     </th>
-                                    <th className="tableHead text-center" scope="col">
+                                    <th
+                                      className="tableHead text-center"
+                                      scope="col"
+                                    >
                                       Actions
                                     </th>
                                   </tr>
@@ -117,10 +129,10 @@ const ListBooks = () => {
                                         <td>
                                           <div className="d-flex justify-content-center">
                                             <button
-                                              onClick={() =>{
-                                                setOpenDeleteModal(true)
-                                                setDeletedBookId(book.id)
-                                             }}
+                                              onClick={() => {
+                                                setOpenDeleteModal(true);
+                                                setDeletedBookId(book.id);
+                                              }}
                                               type="button"
                                               className="btn btn-sm btn-danger me-3"
                                             >
@@ -163,8 +175,8 @@ const ListBooks = () => {
         title="Are you sure?"
         content="Do you really want to delete this book? This process cannot be undone."
         deleteBtn={true}
-        deleteBtnOnlick = {()=>deleteBook(deletedBookId)}
-        cancelBtnOnlick = {()=>setOpenDeleteModal(false)}
+        deleteBtnOnlick={() => deleteBook(deletedBookId)}
+        cancelBtnOnlick={() => setOpenDeleteModal(false)}
         visible={openDeleteModal}
       />
     </div>

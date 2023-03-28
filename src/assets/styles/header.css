@@ -9,9 +9,7 @@
     }
   }
   .modeBtn{
-    display: flex;
-    position:absolute;
-    right:20px;
+    margin-top: 10px;
 }
 .modeBtn img{
   width: 22px;
@@ -25,12 +23,4 @@
     text-align: center;
     background: #b32d1b;
     color: rgb(236, 231, 231);
-  }
-  @media only screen and (max-width: 768px)  {
-    .modeBtn{
-      display: flex;
-      position:absolute;
-      right:40%;
-      top:25px;
-  }
   }
